@@ -7,7 +7,8 @@ import {searchMovies, getPopularMovies} from "./api/movies/route";
 type Movie = {
   id: number;
   title: string;
-  // Add other properties as needed
+  poster_path?: string;
+  release_date?: string;
 };
 
 export default function Home() {
