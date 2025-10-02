@@ -1,6 +1,5 @@
 "use client";
 import MovieCard from "./components/MovieCard";
-import Navbar from "./components/Navbar";
 import {useState, useEffect} from "react";
 import {searchMovies, getPopularMovies} from "./api/movies/route";
 
@@ -46,7 +45,6 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar />
       <form onSubmit={handleSearch} className="m-4 flex">
         <input
           type="text"

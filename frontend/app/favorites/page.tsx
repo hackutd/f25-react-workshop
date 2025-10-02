@@ -1,6 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Navbar from '../components/Navbar'
 import MovieCard from '../components/MovieCard'
 
 type Movie = {
@@ -20,7 +19,6 @@ export default function FavoritesPage() {
 
   return (
     <div>
-      <Navbar />
       <div className="m-6">
         <h1 className="text-2xl font-semibold text-white mb-4">Favorites</h1>
         {favorites.length === 0 ? (
