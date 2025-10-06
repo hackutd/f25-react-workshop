@@ -10,22 +10,10 @@ type Movie = {
 };
 
 export default function MovieCard({ movie }: { movie: Movie }) {
-  const [isFavorited, setIsFavorited] = useState<boolean>(() => {
-    const favs: Movie[] = JSON.parse(localStorage.getItem("favorite-movies") || "[]");
-    return favs.some((m) => m.id === movie.id);
-  });
+  const [isFavorited, setIsFavorited] = useState(false);
 
   function onFavoriteClick() {
-    const next = !isFavorited;
-    setIsFavorited(next);
-
-    const favs: Movie[] = JSON.parse(localStorage.getItem("favorite-movies") || "[]");
-    const updated = next
-      ? (favs.some((m) => m.id === movie.id)
-          ? favs
-          : [...favs, { id: movie.id, title: movie.title || "", poster_path: movie.poster_path, release_date: movie.release_date }])
-      : favs.filter((m) => m.id !== movie.id);
-    localStorage.setItem("favorite-movies", JSON.stringify(updated));
+    console.log("Favorite clicked for movie ID:", movie.id);
   }
 
   return (
