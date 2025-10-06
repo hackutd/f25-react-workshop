@@ -1,7 +1,6 @@
 "use client";
 import MovieCard from "./components/MovieCard";
 import {useState} from "react";
-import {searchMovies, getPopularMovies} from "./api/movies/route";
 
 type Movie = {
   id: number;
@@ -15,20 +14,7 @@ export default function Home() {
   const [movies, setMovies] = useState<Movie[]>([]);
 
   const handleSearch = async (e: any) => {
-    e.preventDefault(); // Prevent page reload on form submit
-
-    if (!searchQuery.trim()) return; // Ignore empty searches
-
-    const fetchSearchResults = async () => {
-      try {
-        const results = await searchMovies(searchQuery);
-        setMovies(results);
-      } catch (error) {
-        console.error("Error searching movies:", error);
-      }
-    };
-
-    fetchSearchResults();
+    console.log(searchQuery)
   }
 
   return (
